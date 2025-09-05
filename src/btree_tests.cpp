@@ -3,5 +3,6 @@
 
 TEST_CASE("B+ simple", "[BTree]") {
     BTree::BTree tree;
+
     REQUIRE(1 == 1);
 }
