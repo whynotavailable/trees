@@ -1,5 +1,7 @@
 #pragma once
 
+// TODO: Explore smart pointers and move semantics with them.
+
 #include <vector>
 namespace BTree {
 
@@ -27,12 +29,9 @@ public:
         this->depth = depth;
     }
 
-    // TODO: Need to test, but it should clear everything down the tree.
     ~BTreeNode() {
-        for (auto it = this->children.begin(); it != this->children.end();
-             it++) {
-            delete *it;
-            *it = 0;
+        for (auto node : this->children) {
+            delete node;
         }
 
         this->children.clear();
