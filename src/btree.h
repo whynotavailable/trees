@@ -22,7 +22,8 @@ private:
     std::vector<BTreeNode *> children;
 
 public:
-    int depth; // This works in reverse, so a leaf will be 0
+    int depth;           // This works in reverse, so a leaf will be 0
+    BTreeNode *next = 0; // Should only be set on a leaf
 
     BTreeNode(BTreeConfig config, int depth) {
         this->config = config;
