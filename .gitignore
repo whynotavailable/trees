@@ -1,3 +1,5 @@
 .cache/
 build/
 .DS_Store
+default.profraw
+test_output
