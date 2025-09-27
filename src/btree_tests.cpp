@@ -1,8 +1,12 @@
 #include "btree.h"
-#include <catch2/catch_test_macros.hpp>
+#include <gtest/gtest.h>
 
-TEST_CASE("B+ simple", "[BTree]") {
-    BTree::BTree tree;
-
-    REQUIRE(1 == 1);
+// Demonstrate some basic assertions.
+TEST(HelloTest, BasicAssertions) {
+    // Expect two strings not to be equal.
+    EXPECT_STRNE("hello", "world");
+    // Expect equality.
+    EXPECT_EQ(7 * 6, 42);
+    BTree::BTree h;
+    h.Add(2);
 }
