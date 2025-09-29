@@ -5,6 +5,9 @@ run: compile
 
 test: compile
 	build/tests
+
+cover: compile
+	build/tests
 	rm -rf test_output
 	mkdir -p test_output
 	llvm-profdata merge -sparse default.profraw -o test_output/default.profdata
@@ -23,7 +26,7 @@ cover_report: compile
 	genhtml test_output/coverage.info --output-directory test_output/html
 
 compile: build
-	cmake --build build
+	cmake --build build --config Dev
 
 build:
 	cmake -G Ninja -S . -B build
